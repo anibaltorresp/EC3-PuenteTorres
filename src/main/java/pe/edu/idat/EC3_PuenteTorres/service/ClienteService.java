@@ -1,7 +1,7 @@
 package pe.edu.idat.EC3_PuenteTorres.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.idat.EC3_PuenteTorres.model.Cliente;
 import pe.edu.idat.EC3_PuenteTorres.repository.ClienteRepository;
 
 import java.util.List;
@@ -9,25 +9,10 @@ import java.util.List;
 @Service
 public class ClienteService {
 
-    private final ClienteRepository repo;
+    @Autowired
+    private ClienteRepository clienteRepository;
 
-    public ClienteService(ClienteRepository repo) {
-        this.repo = repo;
-    }
-
-    public List<Cliente> listar() {
-        return repo.findAll();
-    }
-
-    public Cliente buscar(Integer id) {
-        return repo.findById(id).orElse(null);
-    }
-
-    public Cliente guardar(Cliente cliente) {
-        return repo.save(cliente);
-    }
-
-    public void eliminar(Integer id) {
-        repo.deleteById(id);
+    public void actualizarCliente(Integer id, String nombre, String apellido, String dni, String email, String telefono) {
+        clienteRepository.actualizarCliente(id, nombre, apellido, dni, email, telefono);
     }
 }
