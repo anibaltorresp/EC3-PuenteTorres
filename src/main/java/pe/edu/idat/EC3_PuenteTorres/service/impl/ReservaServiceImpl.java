@@ -3,10 +3,10 @@ package pe.edu.idat.EC3_PuenteTorres.service.impl;
 import org.springframework.stereotype.Service;
 import pe.edu.idat.EC3_PuenteTorres.model.Reserva;
 import pe.edu.idat.EC3_PuenteTorres.repository.ReservaRepository;
+import pe.edu.idat.EC3_PuenteTorres.repository.ReservaRepository.ReservasProjection;
 import pe.edu.idat.EC3_PuenteTorres.service.ReservaService;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ReservaServiceImpl implements ReservaService {
@@ -40,5 +40,11 @@ public class ReservaServiceImpl implements ReservaService {
     @Override
     public void eliminar(Integer id) {
         reservaRepository.deleteById(id);
+    }
+
+    // 🔹 Nuevo método usando la proyección con JOINs
+    @Override
+    public List<ReservasProjection> listarReservasActivas() {
+        return reservaRepository.obtenerReservasActivas();
     }
 }

@@ -3,6 +3,7 @@ package pe.edu.idat.EC3_PuenteTorres.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.idat.EC3_PuenteTorres.model.Reserva;
+import pe.edu.idat.EC3_PuenteTorres.repository.ReservaRepository;
 import pe.edu.idat.EC3_PuenteTorres.service.ReservaService;
 
 import java.util.List;
@@ -45,4 +46,11 @@ public class ReservaController {
         reservaService.eliminar(id);
         return ResponseEntity.noContent().build();
     }
+
+    // ✅ NUEVO ENDPOINT: Listar reservas activas (proyección)
+    @GetMapping("/activas")
+    public ResponseEntity<List<ReservaRepository.ReservasProjection>> listarReservasActivas() {
+        return ResponseEntity.ok(reservaService.listarReservasActivas());
+    }
+
 }

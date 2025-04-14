@@ -1,6 +1,7 @@
 package pe.edu.idat.EC3_PuenteTorres.service;
 
 import pe.edu.idat.EC3_PuenteTorres.model.Reserva;
+import pe.edu.idat.EC3_PuenteTorres.repository.ReservaRepository.ReservasProjection;
 
 import java.util.List;
 
@@ -10,4 +11,7 @@ public interface ReservaService {
     Reserva registrar(Reserva reserva);
     Reserva actualizar(Reserva reserva);
     void eliminar(Integer id);
+
+    //  Nuevo método para proyección
+    List<ReservasProjection> listarReservasActivas();
 }
