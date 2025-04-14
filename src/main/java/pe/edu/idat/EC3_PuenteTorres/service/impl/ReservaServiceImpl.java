@@ -3,7 +3,7 @@ package pe.edu.idat.EC3_PuenteTorres.service.impl;
 import org.springframework.stereotype.Service;
 import pe.edu.idat.EC3_PuenteTorres.model.Reserva;
 import pe.edu.idat.EC3_PuenteTorres.repository.ReservaRepository;
-import pe.edu.idat.EC3_PuenteTorres.repository.ReservaRepository.ReservasProjection;
+import pe.edu.idat.EC3_PuenteTorres.repository.projection.ReservasProjection;
 import pe.edu.idat.EC3_PuenteTorres.service.ReservaService;
 
 import java.util.List;

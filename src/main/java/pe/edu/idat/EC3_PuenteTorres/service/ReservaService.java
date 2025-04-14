@@ -1,7 +1,8 @@
 package pe.edu.idat.EC3_PuenteTorres.service;
 
 import pe.edu.idat.EC3_PuenteTorres.model.Reserva;
-import pe.edu.idat.EC3_PuenteTorres.repository.ReservaRepository.ReservasProjection;
+import pe.edu.idat.EC3_PuenteTorres.repository.projection.ReservasProjection;
+
 
 import java.util.List;
 
